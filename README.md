@@ -16,6 +16,8 @@ It is an adapted version of [Impact_evaluation_practice](https://github.com/Clai
 * `/Slides/` – PDF for all sessions combined (e.g. ITT, ANCOVA, LATE, Lee Bounds, Power)
 * `/Do_files/` – Annotated Stata `.do` files for hands-on practice
 * `/Dataset/` – Simulated datasets used across the course (`.dta` files)
+* `/DatasetPractice/` – Output files created when running the do-files (empty by default)
+* `/Logs/` – Stata log files created when running the do-files (empty by default)
 * `README.md` – Overview and instructions (this file)
 * `LICENSE` – Creative Commons license for educational reuse
 
@@ -35,6 +37,7 @@ This work is based on **"Impact_evaluation_practice" by Claire Stein (2025)**, a
 
 * Revised existing slides and added new ones on ITT, ANCOVA, Difference-in-Differences, LATE, and Lee Bounds
 * Minor updates to the Stata .do files
+* Added `/Logs/` and `/DatasetPractice/` folders for log files and output
 * The simulated dataset is unchanged from the original.
 
 This adapted version is not endorsed by or affiliated with the original author.
