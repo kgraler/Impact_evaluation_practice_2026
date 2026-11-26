@@ -14,10 +14,12 @@ log using Logs/Power.txt, replace
 Using sampsi, power, and clustersampsi for different designs.
 ****/
 
-
 /*** STEP 1: Power Visualization — Varying Effect Sizes ***/
 * Goal: How power changes with different sample sizes and effect sizes
 power twomeans 60 (65(5)80), sd(40) n(400(20)600) graph
+
+* Goal: How power changes with different sample sizes and effect sizes
+power twomeans 60 (65(5)80), sd(40) n(100(100)1000) graph
 
 /*
 Interpretation:
@@ -29,7 +31,7 @@ Interpretation:
 
 /*** STEP 1b: Power Visualization — Varying Standard Deviations ***/
 * Goal: Fix effect size (60 vs. 70), vary SD to see impact on power
-power twomeans 60 70, sd(20 25 30 40) n(400(20)600) graph
+power twomeans 60 70, sd(20 25 30 40) n(100(100)1000) graph
 
 /*
 Interpretation:
@@ -39,8 +41,8 @@ Interpretation:
 
 
 /*** STEP 2: Power Calculation — Two-Sample (No Clustering) ***/
-* Goal: Sample size required to detect a $5 difference in savings
-sampsi 60 65, sd1(20) sd2(20) alpha(0.05) power(0.8)
+* Goal: Sample size required to detect a $10 difference in savings
+sampsi 60 70, sd1(40) sd2(40) alpha(0.05) power(0.8)
 
 
  /*
@@ -57,10 +59,10 @@ ssc install clustersampsi
 * if install does not work
 * net install st0286, from(http://www.stata-journal.com/software/sj13-1)
 * otherwise
-// power twomeans 60 65, cluster m1(30) m2(30) sd(15) rho(0.05)
+// power twomeans 60 70, cluster m1(30) m2(30) sd(40) rho(0.05)
 
 * Goal: Calculate required number of clusters per arm
-clustersampsi samplesize means, mu1(60) mu2(65) sd1(15) sd2(15) rho(0.05) m(30) alpha(0.05) beta(0.8)
+clustersampsi samplesize means, mu1(60) mu2(70) sd1(40) sd2(40) rho(0.05) m(30) alpha(0.05) beta(0.8)
 
 
  /*
